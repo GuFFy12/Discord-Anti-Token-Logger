@@ -27,9 +27,9 @@
   3. `npx asar extract app.asar app`
   4. В появившийся в этой директории папке app правим следующие файлы:
 
-    4.1. app\common\moduleUpdater.js   ===>   Меняем   `skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;`   НА   `skipHostUpdate = true;`
+    4.1. app\common\moduleUpdater.js   ===>   Меняем   skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;   НА   skipHostUpdate = true;
 
-    4.2. app\common\paths.js           ===>   Меняем   `userDataPath = determineUserData(userDataRoot, buildInfo);`       НА   `userDataPath = _path.default.join(_path.default.dirname(process.execPath), '..', '..', 'data');`
+    4.2. app\common\paths.js           ===>   Меняем   userDataPath = determineUserData(userDataRoot, buildInfo);`       НА   userDataPath = _path.default.join(_path.default.dirname(process.execPath), '..', '..', 'data');
 
   5. `npx asar pack app app.asar`
   6. Запускаемся только с discord.exe который установлен в папке версии над которой вы провели манипуляции.
