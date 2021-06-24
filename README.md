@@ -24,7 +24,7 @@
 3-ий метод установки) Вручную если вы не доверяете моему патчу.
   1. `npm install -g asar`
   2. `cd` `Appdata/Local/Discord\app-(version)\resources`
-  3. `npx asar extract app app.asar`
+  3. `npx asar extract app.asar app`
   4. В появившийся в этой директории папке app правим следующие файлы:
 
     4.1. app\common\moduleUpdater.js   ===>   Меняем   `skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;`   НА   `skipHostUpdate = true;`
