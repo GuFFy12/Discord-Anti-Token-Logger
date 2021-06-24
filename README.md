@@ -26,8 +26,11 @@
   2. ```cd``` `Appdata/Local/Discord\app-(version)\resources`
   3. npx asar extract app app.asar
   4. В появившийся в этой директории папке app правим следующие файлы:
+
     4.1. app\common\moduleUpdater.js   ===>   Меняем   `skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;`   НА   `skipHostUpdate = true;`
+
     4.2. app\common\paths.js           ===>   Меняем   `userDataPath = determineUserData(userDataRoot, buildInfo);`       НА   `userDataPath = _path.default.join(_path.default.dirname(process.execPath), '..', '..', 'data');`
+
   5. `npx asar pack app app.asar`
   6. Запускаемся только с discord.exe который установлен в папке версии над которой вы провели манипуляции.
   7. После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
