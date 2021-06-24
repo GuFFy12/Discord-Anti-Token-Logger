@@ -30,10 +30,11 @@
     4.1. app\common\moduleUpdater.js   ===>   Меняем   skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;   НА   skipHostUpdate = true;
 
     4.2. app\common\paths.js           ===>   Меняем   userDataPath = determineUserData(userDataRoot, buildInfo);       НА   userDataPath = _path.default.join(_path.default.dirname(process.execPath), '..', '..', 'data');
-
-  5. `npx asar pack app app.asar`
-  6. Запускаемся только с discord.exe который установлен в папке версии над которой вы провели манипуляции.
-  7. После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
+  
+  5. Удаляем файл app.asar.
+  6. `npx asar pack app app.asar`
+  7. Запускаемся только с discord.exe который установлен в папке версии над которой вы провели манипуляции.
+  8. После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
 
 ПОСЛЕ УСТАНОВКИ ЗАКРОЙТЕ ДИСКОРД УДАЛИТЕ ФАЙЛЫ AppData/Roaming/discord and AppData/Local/Discord , ЗАТЕМ ЗАПУСТИТЕ DISCORD. КРОМЕ AppData/Roamaning/discord/Dictionaries НИЧЕГО ПОЯВИТСЯ НЕ ДОЛЖНО.
 
