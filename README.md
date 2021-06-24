@@ -22,9 +22,9 @@
 2-ой метод установки) Файл app.asar установить в AppData/Local/Discord/app-(версия)/resources/ (заменить файл). После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
 
 3-ий метод установки) Вручную если вы не доверяете моему патчу.
-  1. ```npm install -g asar```
-  2. ```cd``` `Appdata/Local/Discord\app-(version)\resources`
-  3. npx asar extract app app.asar
+  1. `npm install -g asar`
+  2. `cd` `Appdata/Local/Discord\app-(version)\resources`
+  3. `npx asar extract app app.asar`
   4. В появившийся в этой директории папке app правим следующие файлы:
 
     4.1. app\common\moduleUpdater.js   ===>   Меняем   `skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;`   НА   `skipHostUpdate = true;`
