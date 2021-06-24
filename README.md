@@ -17,11 +17,11 @@
 
 Установка:
 
-1) Удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord. Готовую сборку скачать и установить. Запускаемся только с ярлыка который лежит в основной папке.
+1-ый метод установки) Удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord. Готовую сборку скачать и установить. Запускаемся только с ярлыка который лежит в основной папке.
 
-2) Файл app.asar установить в AppData/Local/Discord/app-(версия)/resources/ (заменить файл). После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
+2-ой метод установки) Файл app.asar установить в AppData/Local/Discord/app-(версия)/resources/ (заменить файл). После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
 
-3) Вручную если вы не доверяете моему патчу.
+3-ий метод установки) Вручную если вы не доверяете моему патчу.
   1. ```npm install -g asar```
   2. ```cd``` `Appdata/Local/Discord\app-(version)\resources`
   3. npx asar extract app app.asar
