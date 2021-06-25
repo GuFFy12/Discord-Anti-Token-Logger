@@ -21,10 +21,11 @@ Installation:
 2nd installation method) Install the app.asar file in AppData / Local / Discord / app- (version) / resources / (replace file). After that, it is advisable to copy the Discord folder to another location and delete the discord through the built-in Windows uninstaller and delete the AppData / Roaming / discord and AppData / Local / Discord files. We start only with discord.exe which is installed in the folder of the version over which you performed the manipulations.
 
 3rd installation method) Manually if you don't trust my patch.
-    1.` npm install -g asar`
-    2.` cd` `Appdata / Local / Discord \ app- (version) \ resources`
-    3. `npx asar extract app.asar app`
-    4. In the app folder that appears in this directory, edit the following files:
+
+  1.` npm install -g asar`
+  2.` cd` `Appdata / Local / Discord \ app- (version) \ resources`
+  3. `npx asar extract app.asar app`
+  4. In the app folder that appears in this directory, edit the following files:
 
     4.1. app \ common \ moduleUpdater.js ===> Change skipHostUpdate = settings.get (SKIP_HOST_UPDATE) || ! updatable; ON skipHostUpdate = true;
 
