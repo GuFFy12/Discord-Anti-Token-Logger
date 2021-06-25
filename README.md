@@ -22,8 +22,8 @@ Installation:
 
 3rd installation method) Manually if you don't trust my patch.
 
-  1.` npm install -g asar`
-  2.` cd` `Appdata / Local / Discord \ app- (version) \ resources`
+  1. `npm install -g asar`
+  2. `cd` `Appdata / Local / Discord \ app- (version) \ resources`
   3. `npx asar extract app.asar app`
   4. In the app folder that appears in this directory, edit the following files:
 
