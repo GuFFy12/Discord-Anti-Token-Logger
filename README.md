@@ -30,7 +30,7 @@ Installation:
 
     4.2. app \ common \ paths.js ===> Change userDataPath = determineUserData (userDataRoot, buildInfo); ON userDataPath = _path.default.join (_path.default.dirname (process.execPath), '..', 'data');
   
-  5.` npx asar pack app app.asar`
+  5. `npx asar pack app app.asar`
   6. The app folder is not needed. You can delete.
   7. We start only with discord.exe which is installed in the folder of the version over which you performed the manipulations.
   8. After that, it is advisable to copy the Discord folder to another location and delete the discord through the built-in Windows uninstaller and delete the AppData / Roaming / discord and AppData / Local / Discord files.
