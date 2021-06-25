@@ -37,3 +37,43 @@ Installation:
   8. After that, it is advisable to copy the Discord folder to another location and delete the discord through the built-in Windows uninstaller and delete the AppData / Roaming / discord and AppData / Local / Discord files.
 
 AFTER INSTALLATION, CLOSE DISCORD DELETE AppData/Roaming/discord and AppData/Local/Discord FILES, THEN RUN DISCORD. EXCEPT AppData/Roamaning/discord/Dictionaries, NOTHING SHOULD APPEAR.
+
+# Discord-anti-token-logger
+
+Итак сегдня я раскажу как сделать из дискорда любой версии версию портабл с изменеными путям расположения файла с токеном.
+После этих действий ваш файл с токенами будет недоступен для обычных токен логгеров дискорд.
+
+РЕКОМЕНДУЕТСЯ УСТАНОВИТЬ ПАПКУ С ДИСКОРДОМ В ДРУГОЕ МЕСТО И ОБЯЗАТЕЛЬНО УДАЛИТЬ ФАЙЛЫ ДИСКОРДА В APPDATA (AppData/Roaming/discord and AppData/Local/Discord)
+
+Вам предостовляется выбор:
+1) Скачать готовую сборку с дискордом, установить ее и пользоваться. 
+2) Скачать файл выше - напротив названия файла app.asar написанно для какой он версии дискорда.
+3) Вручную распаковать app.asar, найти нужные файлы и строки, заменить их (мануал по этим операциям 
+ниже).
+
+Данный так назавем его патч включает в себя:
+1) Изменение пути хранения файлов с токеном (по умолчанию appdata/roaming/discord) на директорию где установлен сам дискорд (Discord/data).
+2) Отключение установки обновлений дискорда. Нужно это для того что бы патч в последствии не слетел при обновлении. 
+
+Установка:
+
+1-ый метод установки) Удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord. Готовую сборку скачать и установить. Запускаемся только с ярлыка который лежит в основной папке.
+
+2-ой метод установки) Файл app.asar установить в AppData/Local/Discord/app-(версия)/resources/ (заменить файл). После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord. Запускаемся только с discord.exe который установлен в папке версии над которой вы провели манипуляции.
+
+3-ий метод установки) Вручную если вы не доверяете моему патчу.
+  1. `npm install -g asar`
+  2. `cd` `Appdata/Local/Discord\app-(version)\resources`
+  3. `npx asar extract app.asar app`
+  4. В появившийся в этой директории папке app правим следующие файлы:
+
+    4.1. app\common\moduleUpdater.js   ===>   Меняем   skipHostUpdate = settings.get(SKIP_HOST_UPDATE) || !updatable;   НА   skipHostUpdate = true;
+
+    4.2. app\common\paths.js           ===>   Меняем   userDataPath = determineUserData(userDataRoot, buildInfo);       НА   userDataPath = _path.default.join(_path.default.dirname(process.execPath), '..', 'data');
+  
+  5. `npx asar pack app app.asar`
+  6. Папка app не нужна. Можете удалить.
+  7. Запускаемся только с discord.exe который установлен в папке версии над которой вы провели манипуляции.
+  8. После саму папку Discord желательно копировать в другое место и удалить дискорд через встроенный деинсталятор Windows и удалить файлы AppData/Roaming/discord and AppData/Local/Discord.
+
+ПОСЛЕ УСТАНОВКИ ЗАКРОЙТЕ ДИСКОРД УДАЛИТЕ ФАЙЛЫ AppData/Roaming/discord and AppData/Local/Discord , ЗАТЕМ ЗАПУСТИТЕ DISCORD. КРОМЕ AppData/Roamaning/discord/Dictionaries НИЧЕГО ПОЯВИТСЯ НЕ ДОЛЖНО.
