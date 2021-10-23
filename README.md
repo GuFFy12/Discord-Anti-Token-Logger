@@ -20,7 +20,7 @@ Installation:
   
   5. `npx asar pack app app.asar`
   6. The app folder is not needed. You can delete.
-  7. We start only with discord.exe which is installed in the folder of the version over which you performed the manipulations.
+  7. Start only with discord.exe which is installed in the folder of the version over which you performed the manipulations. (Discord\app-x.x.xxxx\Discord.exe)
   8. After that, it is advisable to copy the Discord folder to another location and delete the discord through the built-in Windows uninstaller and delete the AppData / Roaming / discord and AppData / Local / Discord files.
 
-AFTER INSTALLATION, CLOSE DISCORD DELETE AppData/Roaming/discord and AppData/Local/Discord FILES, THEN RUN DISCORD. EXCEPT AppData/Roamaning/discord/Dictionaries, NOTHING SHOULD APPEAR.
+AFTER INSTALLATION, CLOSE DISCORD, DELETE AppData/Roaming/discord and AppData/Local/Discord FILES, THEN RUN DISCORD. EXCEPT AppData/Roamaning/discord/Dictionaries, NOTHING SHOULD APPEAR.
